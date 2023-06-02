@@ -6,10 +6,9 @@ export const QUERY_PRODUCTS = gql`
     products(category: $category) {
       _id
       name
-      description
+      story
       price
       quantity
-      image
       category {
         _id
       }
@@ -32,7 +31,7 @@ export const QUERY_ALL_PRODUCTS = gql`
     products {
       _id
       name
-      description
+      story
       price
       quantity
       category {
@@ -63,10 +62,9 @@ export const QUERY_USER = gql`
         products {
           _id
           name
-          description
+          story
           price
           quantity
-          image
         }
       }
     }
