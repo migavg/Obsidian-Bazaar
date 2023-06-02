@@ -45,17 +45,17 @@ function CategoryMenu() {
   };
 
   return (
-    <div>
-      <h2>Choose a Category:</h2>
+    <div className='navbar-item '>
       {categories.map((item) => (
-        <button
+        <a
+        className="has-text-white is-size-4 navbar-item "
           key={item._id}
           onClick={() => {
             handleClick(item._id);
           }}
         >
           {item.name}
-        </button>
+        </a>
       ))}
     </div>
   );
