@@ -34,14 +34,12 @@ export const ADD_ORDER = gql`
 // Mutation for adding a user
 export const ADD_USER = gql`
   mutation addUser(
-    $firstName: String!
-    $lastName: String!
+    $cryptonym: String!
     $email: String!
     $password: String!
   ) {
     addUser(
-      firstName: $firstName
-      lastName: $lastName
+      cryptonym: $cryptonym
       email: $email
       password: $password
     ) {
