@@ -3,6 +3,7 @@ import { useMutation } from "@apollo/client";
 import { Link } from "react-router-dom";
 import { LOGIN } from "../utils/mutations";
 import Auth from "../utils/auth";
+import Hero from "../components/Hero";
 
 function Login(props) {
   const [formState, setFormState] = useState({ email: "", password: "" });
@@ -30,14 +31,14 @@ function Login(props) {
   };
 
   return (
-    <div className="container my-1">
-      <Link to="/signup">← Go to Signup</Link>
-
-      <h2>Login</h2>
+    <div className="container my-1 p-4">
+        
+      <h2 className="is-size-1 has-text-white">Login</h2>
       <form onSubmit={handleFormSubmit}>
         <div className="flex-row space-between my-2">
-          <label htmlFor="email">Email address:</label>
+          <label htmlFor="email" className="is-size-3 has-text-white">Email address:</label>
           <input
+            className="input is-rounded"
             placeholder="youremail@test.com"
             name="email"
             type="email"
@@ -46,8 +47,9 @@ function Login(props) {
           />
         </div>
         <div className="flex-row space-between my-2">
-          <label htmlFor="pwd">Password:</label>
+          <label htmlFor="pwd" className="is-size-3 has-text-white">Password:</label>
           <input
+          className="input is-rounded"
             placeholder="******"
             name="password"
             type="password"
@@ -61,9 +63,11 @@ function Login(props) {
           </div>
         ) : null}
         <div className="flex-row flex-end">
-          <button type="submit">Submit</button>
+          <button type="submit" className="button is-light my-3">Submit</button>
         </div>
       </form>
+
+      <Link to="/signup">← Don't have an account? Click to Sign Up</Link>
     </div>
   );
 }

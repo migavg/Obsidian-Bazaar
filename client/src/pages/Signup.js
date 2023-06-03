@@ -31,13 +31,14 @@ function Signup(props) {
 
   return (
     <div className="container my-1">
-      <Link to="/login">← Go to Login</Link>
+      
 
-      <h2>Signup</h2>
+      <h2 className="is-size-1 has-text-white">Signup</h2>
       <form onSubmit={handleFormSubmit}>
         <div className="flex-row space-between my-2">
-          <label htmlFor="cryptonym">Cryptonym:</label>
+          <label htmlFor="cryptonym" className="is-size-3 has-text-white">Cryptonym:</label>
           <input
+          className="input is-rounded"
             placeholder="cryptonym"
             name="cryptonym"
             type="cryptonym"
@@ -56,8 +57,9 @@ function Signup(props) {
           />
         </div> */}
         <div className="flex-row space-between my-2">
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="email" className="is-size-3 has-text-white">Email:</label>
           <input
+          className="input is-rounded"
             placeholder="youremail@test.com"
             name="email"
             type="email"
@@ -66,8 +68,9 @@ function Signup(props) {
           />
         </div>
         <div className="flex-row space-between my-2">
-          <label htmlFor="pwd">Password:</label>
+          <label htmlFor="pwd" className="is-size-3 has-text-white">Password:</label>
           <input
+          className="input is-rounded"
             placeholder="******"
             name="password"
             type="password"
@@ -76,8 +79,9 @@ function Signup(props) {
           />
         </div>
         <div className="flex-row flex-end">
-          <button type="submit">Submit</button>
+          <button className="button is-light my-3" type="submit">Submit</button>
         </div>
+        <Link to="/login">← Already have an account? Click here to login</Link>
       </form>
     </div>
   );
