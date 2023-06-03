@@ -17,6 +17,7 @@ import Nav from "./components/Nav";
 import { StoreProvider } from "./utils/GlobalState";
 import Success from "./pages/Success";
 import OrderHistory from "./pages/OrderHistory";
+import Footer from "./components/Footer";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -41,7 +42,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div>
+        <div className="has-background-obgradient">
           <StoreProvider>
             <Nav />
             <Routes>
@@ -53,6 +54,7 @@ function App() {
               <Route path="/products/:id" element={<Detail />} />
               <Route path="*" element={<NoMatch />} />
             </Routes>
+            <Footer />
           </StoreProvider>
         </div>
       </Router>

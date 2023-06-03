@@ -10383,6 +10383,10 @@ a.has-text-danger-dark:focus {
   background-color: #fafafa !important;
 }
 
+.has-background-obgradient {
+  background-image: linear-gradient(#1c212f,#111111 ) !important;
+}
+
 .is-flex-direction-row {
   flex-direction: row !important;
 }
