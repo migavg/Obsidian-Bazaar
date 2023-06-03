@@ -147,6 +147,31 @@ fieldset[disabled] .pagination-ellipsis {
   margin-bottom: 1.5rem;
 }
 
+/* classes for video  */
+.main {
+  width: 100%;
+  height: 100vh;
+}
+
+video {
+width: 100%;
+height: 85%;
+object-fit: cover;
+filter: brightness(40%);
+}
+
+.heroText {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
 .delete,
 .modal-close {
   -webkit-touch-callout: none;

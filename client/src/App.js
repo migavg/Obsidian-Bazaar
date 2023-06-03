@@ -19,6 +19,7 @@ import Success from "./pages/Success";
 import OrderHistory from "./pages/OrderHistory";
 import Footer from "./components/Footer";
 
+
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
