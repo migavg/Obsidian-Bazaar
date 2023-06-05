@@ -43,7 +43,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className="has-background-obgradient">
+        <div>
           <StoreProvider>
             <Nav />
             <Routes>

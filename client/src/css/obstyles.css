@@ -154,10 +154,10 @@ fieldset[disabled] .pagination-ellipsis {
 }
 
 video {
-width: 100%;
-height: 85%;
-object-fit: cover;
-filter: brightness(40%);
+  width: 100%;
+  height: 85%;
+  object-fit: cover;
+  filter: brightness(40%);
 }
 
 .heroText {
@@ -171,6 +171,21 @@ filter: brightness(40%);
   align-items: center;
   color: white;
 }
+
+/* personal added classes  */
+
+.loginPadding {
+  padding-top: 10%;
+}
+
+.loginBox {
+  display: block;
+  padding: 10%;
+  border-radius: 8px;
+  box-shadow: -10px 10px 15px 5px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
 
 .delete,
 .modal-close {
@@ -427,7 +442,7 @@ th:not([align]) {
 }
 
 html {
-  background-color: white;
+  background-image: linear-gradient(#10131c, #151924, #10131c);
   font-size: 16px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -436,6 +451,9 @@ html {
   overflow-y: scroll;
   text-rendering: optimizeLegibility;
   text-size-adjust: 100%;
+  margin: auto;
+  height: 100%;
+
 }
 
 article,
@@ -7813,6 +7831,7 @@ label.panel-block:hover {
   flex-grow: 1;
   flex-shrink: 1;
   padding: 0.75rem;
+  height: 100vh;
 }
 
 .columns.is-mobile>.column.is-narrow {
@@ -10409,7 +10428,8 @@ a.has-text-danger-dark:focus {
 }
 
 .has-background-obgradient {
-  background-image: linear-gradient(#1c212f,#111111 ) !important;
+  background-image: linear-gradient(#1c212f, #111111) !important;
+
 }
 
 .is-flex-direction-row {
