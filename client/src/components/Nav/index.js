@@ -45,41 +45,46 @@ function Nav() {
     }
   }
   //displays main black header with all of category links
-  return (
-    <header className="">
-      <nav class="navbar has-background-black" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="https://bulma.io">
+return (
+  <header className="">
+    <nav
+      className="navbar has-background-black"
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <div className="navbar-brand">
+        <a className="navbar-item" href="https://bulma.io"></a>
+        {/* burger menu that displays when window is minimized, not functioning yet */}
+        <a
+          role="button"
+          className="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
 
+      <div id="navbarBasicExample" className="navbar-menu">
+        <div className="navbar-start">
+          <a className="navbar-item has-text-white is-size-4" href="/">
+            <span className="pr-3 is-flex">
+              <img src={obLogoSmall} alt="small circular stone" />
+            </span>
+            Obsidian Bazaar
           </a>
-          {/* burger menu that displays when window is minimized, not functioning yet */}
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
+          <CategoryMenu />
         </div>
 
-        <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-start">
+        <div className="navbar-end">{showNavigation()}</div>
+      </div>
+    </nav>
+  </header>
+);
 
-            <a class="navbar-item has-text-white is-size-4" a href="/">
-              <span className="pr-3 is-flex"><img src={obLogoSmall} alt='small circular stone' /></span>
-              Obsidian Bazaar
-            </a>
-            <CategoryMenu />
-          </div>
-
-          <div class="navbar-end">
-            {showNavigation()}
-          </div>
-
-
-        </div>
-
-      </nav>
-    </header>
-  );
 }
 
 export default Nav;

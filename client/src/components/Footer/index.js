@@ -2,8 +2,8 @@ import React from "react";
 
 const Footer = () => {
     return (
-        <footer class="footer has-background-black mt-6">
-  <div class="content has-text-centered ">
+        <footer className="footer has-background-black mt-6">
+  <div className="content has-text-centered ">
     <p className="has-text-white">
       <strong className="has-text-light">Obsidian Bazaar</strong> by <a href="https://github.com/migavg/Obsidian-Bazaar">Gorman Dogfight</a>. The source code is licensed
       <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
