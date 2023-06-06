@@ -12,13 +12,13 @@ function Nav() {
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
-        <ul className="">
-          <li className="">
-            <Link to="/orderHistory" className="has-text-white is-size-4">
+        <ul className="navbar-item">
+          <li>
+            <Link to="/orderHistory" className="has-text-white is-size-4 pr-3">
               Order History
             </Link>
           </li>
-          <li className="has-text-white">
+          <li className="has-text-white is-size-4">
             {/* this is not using the Link component to logout or user and then refresh the application to the start */}
             <a href="/" className="has-text-white is-size-4" onClick={() => Auth.logout()}>
               Logout
