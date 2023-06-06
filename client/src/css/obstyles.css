@@ -176,6 +176,7 @@ video {
 
 .loginPadding {
   padding-top: 10%;
+  
 }
 
 .loginBox {
@@ -183,6 +184,7 @@ video {
   padding: 10%;
   border-radius: 8px;
   box-shadow: -10px 10px 15px 5px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #0b0d11;
 }
 
 
@@ -2257,7 +2259,8 @@ fieldset[disabled] .button {
   flex-grow: 1;
   margin: 0 auto;
   position: relative;
-  width: auto;
+  width: 95%;
+  
 }
 
 .container.is-fluid {
@@ -5243,12 +5246,23 @@ print {
 }
 
 .card {
-  background-color: white;
+  background-color: black;
   border-radius: 0.25rem;
   box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
-  color: #4a4a4a;
-  max-width: 100%;
+  color: white;
+  width: 28%;
   position: relative;
+  margin-top: 10%;
+  margin-left: 2%;
+  margin-right: 2%;
+  padding: 2%;
+
+}
+
+@media screen and (max-width: 900px) {
+  .card {
+    width: 100%;
+  }
 }
 
 .card-header:first-child,
