@@ -30,23 +30,23 @@ function Signup(props) {
   };
 
   return (
-    <div className="container my-1">
-      
-
-      <h2 className="is-size-1 has-text-white">Signup</h2>
-      <form onSubmit={handleFormSubmit}>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="cryptonym" className="is-size-3 has-text-white">Cryptonym:</label>
-          <input
-          className="input is-rounded"
-            placeholder="cryptonym"
-            name="cryptonym"
-            type="cryptonym"
-            id="cryptonym"
-            onChange={handleChange}
-          />
-        </div>
-        {/* <div className="flex-row space-between my-2">
+    <div className="column">
+      <div className="container my-1 is-flex is-justify-content-center loginPadding">
+        <div className="has-background-black loginBox">
+          <h2 className="is-size-1 has-text-white has-text-centered">SIGN UP</h2>
+          <form onSubmit={handleFormSubmit}>
+            <div className="flex-row space-between my-2">
+              <label htmlFor="cryptonym" className="is-size-3 has-text-white"></label>
+              <input
+                className="input is-rounded"
+                placeholder="cryptonym"
+                name="cryptonym"
+                type="cryptonym"
+                id="cryptonym"
+                onChange={handleChange}
+              />
+            </div>
+            {/* <div className="flex-row space-between my-2">
           <label htmlFor="lastName">Last Name:</label>
           <input
             placeholder="Last"
@@ -56,33 +56,35 @@ function Signup(props) {
             onChange={handleChange}
           />
         </div> */}
-        <div className="flex-row space-between my-2">
-          <label htmlFor="email" className="is-size-3 has-text-white">Email:</label>
-          <input
-          className="input is-rounded"
-            placeholder="youremail@test.com"
-            name="email"
-            type="email"
-            id="email"
-            onChange={handleChange}
-          />
+            <div className="flex-row space-between my-2">
+              <label htmlFor="email" className="is-size-3 has-text-white"></label>
+              <input
+                className="input is-rounded"
+                placeholder="youremail@test.com"
+                name="email"
+                type="email"
+                id="email"
+                onChange={handleChange}
+              />
+            </div>
+            <div className="flex-row space-between my-2">
+              <label htmlFor="pwd" className="is-size-3 has-text-white"></label>
+              <input
+                className="input is-rounded"
+                placeholder="password"
+                name="password"
+                type="password"
+                id="pwd"
+                onChange={handleChange}
+              />
+            </div>
+            <div className="flex-row flex-end buttons has-addons is-centered">
+              <button className="button is-light my-6" type="submit">Submit</button>
+            </div>
+            <Link to="/login" className="has-text-white">← Already have an account? Click here to login</Link>
+          </form>
         </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="pwd" className="is-size-3 has-text-white">Password:</label>
-          <input
-          className="input is-rounded"
-            placeholder="******"
-            name="password"
-            type="password"
-            id="pwd"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row flex-end">
-          <button className="button is-light my-3" type="submit">Submit</button>
-        </div>
-        <Link to="/login">← Already have an account? Click here to login</Link>
-      </form>
+      </div>
     </div>
   );
 }

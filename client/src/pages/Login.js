@@ -34,7 +34,7 @@ function Login(props) {
   return (
     <div className="column">
       <div className="container my-1 is-flex is-justify-content-center loginPadding">
-        <div className="has-background-black loginBox ">
+        <div className="has-background-black loginBox">
           <h2 className="is-size-1 has-text-white has-text-centered">LOGIN</h2>
           <form onSubmit={handleFormSubmit}>
             <div className="flex-row space-between my-2">
