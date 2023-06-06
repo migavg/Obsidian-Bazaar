@@ -8,6 +8,7 @@ import Auth from '../../utils/auth';
 import { useStoreContext } from '../../utils/GlobalState';
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';
 import './style.css';
+import cart from "../../assets/cart.png"
 
 // stripePromise returns a promise with the stripe object as soon as the Stripe package loads
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
@@ -69,7 +70,7 @@ const Cart = () => {
     return (
       <div className="cart-closed" onClick={toggleCart}>
         <span role="img" aria-label="trash">
-          🛒
+          <img src={cart}></img>
         </span>
       </div>
     );
@@ -88,7 +89,7 @@ const Cart = () => {
           ))}
 
           <div className="flex-row space-between">
-            <strong>Total: ${calculateTotal()}</strong>
+            <strong className='has-text-white pr-1'> Total: ${calculateTotal()}</strong>
 
             {/* Authentication if user is logged in, if so render a checkout button
                 if not instruct user to login */}
@@ -102,9 +103,11 @@ const Cart = () => {
       ) : (
         <h3>
           <span role="img" aria-label="shocked">
-            😱
+            
           </span>
           You haven't added anything to your cart yet!
+          <br></br>
+          Do you really want to leave empty handed?
         </h3>
       )}
     </div>
