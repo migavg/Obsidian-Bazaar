@@ -40,18 +40,24 @@ function ProductItem(item) {
 
   // productItem card display
   return (
-    <div className="card px-1 py-1">
-      <Link to={`/products/${_id}`}>
-        <p>{name}</p>
-        <p>{story.substring(0, MAX_PREVIEW_CHARACTERS)}...</p>
-      </Link>
-      <div>
-        <div>
-          {quantity} {pluralize("item", quantity)} in stock
+    <div className="card ">
+      <div className=" ">
+        <Link
+          className="has-text-white has-text-centered"
+          to={`/products/${_id}`}>
+          <p className="is-size-4 pb-2">{name}</p>
+          <p>{story.substring(0, MAX_PREVIEW_CHARACTERS)}...</p>
+        </Link>
+        <div className="has-text-centered">
+          <div className="has-text-warning is-size-">
+            {quantity} {pluralize("item", quantity)} in stock
+          </div>
+          <span className="has-text-danger">${price}</span>
         </div>
-        <span>${price}</span>
+        <div className="buttons has-addons is-centered pt-4">
+          <button className="button is-light " onClick={addToCart}>Add to cart</button>
+        </div>
       </div>
-      <button onClick={addToCart}>Add to cart</button>
     </div>
   );
 }
