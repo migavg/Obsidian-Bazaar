@@ -12,6 +12,8 @@ function ProductItem(item) {
 
   const { cart } = state;
 
+  const MAX_PREVIEW_CHARACTERS = 200;
+
   // addToCart function that adds the productItem by its productId to the cart
   const addToCart = () => {
     const itemInCart = cart.find((cartItem) => cartItem._id === _id);
@@ -41,7 +43,7 @@ function ProductItem(item) {
     <div className="card px-1 py-1">
       <Link to={`/products/${_id}`}>
         <p>{name}</p>
-        <p>{story}</p>
+        <p>{story.substring(0, MAX_PREVIEW_CHARACTERS)}...</p>
       </Link>
       <div>
         <div>
