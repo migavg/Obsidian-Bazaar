@@ -1,22 +1,23 @@
-import React, { useEffect } from 'react';
-import { loadStripe } from '@stripe/stripe-js';
-import { useLazyQuery } from '@apollo/client';
-import { QUERY_CHECKOUT } from '../../utils/queries';
-import { idbPromise } from '../../utils/helpers';
-import CartItem from '../CartItem';
-import Auth from '../../utils/auth';
-import { useStoreContext } from '../../utils/GlobalState';
-import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';
-import './style.css';
+import React, { useEffect } from "react";
+import { loadStripe } from "@stripe/stripe-js";
+import { useLazyQuery } from "@apollo/client";
+import { QUERY_CHECKOUT } from "../../utils/queries";
+import { idbPromise } from "../../utils/helpers";
+import CartItem from "../CartItem";
+import Auth from "../../utils/auth";
+import { useStoreContext } from "../../utils/GlobalState";
+import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from "../../utils/actions";
+import "./style.css";
 
 // stripePromise returns a promise with the stripe object as soon as the Stripe package loads
-const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+const stripePromise = loadStripe(
+  "pk_test_51NFpTqAutvwJrJCImlLs57tLWM0aTgP9r11mSugeahaNpfrjjR9EiYPz6CZmqAbsMqUhVM3jgHVXhd6EtdNMGXPa00I6OQfpzr"
+);
 
 const Cart = () => {
   const [state, dispatch] = useStoreContext();
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
 
-// UseEffect Function that reditectsToCheckout if there is data present and creates a checkout sessionId
   useEffect(() => {
     if (data) {
       stripePromise.then((res) => {
@@ -25,11 +26,9 @@ const Cart = () => {
     }
   }, [data]);
 
-  //  If products are added to the cart or if the cart is updated in legnth (number of items in cart) 
-  //  return a products array of those products added to the cart
   useEffect(() => {
     async function getCart() {
-      const cart = await idbPromise('cart', 'get');
+      const cart = await idbPromise("cart", "get");
       dispatch({ type: ADD_MULTIPLE_TO_CART, products: [...cart] });
     }
 
@@ -41,7 +40,7 @@ const Cart = () => {
   function toggleCart() {
     dispatch({ type: TOGGLE_CART });
   }
-  // Function to calculate cart total for each item in the cart
+
   function calculateTotal() {
     let sum = 0;
     state.cart.forEach((item) => {
@@ -50,21 +49,18 @@ const Cart = () => {
     return sum.toFixed(2);
   }
 
-  // When checkout button is clicked
   function submitCheckout() {
     const productIds = [];
-    // loop over eadch item
     state.cart.forEach((item) => {
       for (let i = 0; i < item.purchaseQuantity; i++) {
         productIds.push(item._id);
       }
     });
-    // add productIds to products in the cart checkout
     getCheckout({
       variables: { products: productIds },
     });
   }
-    // state render if the cart has items added
+
   if (!state.cartOpen) {
     return (
       <div className="cart-closed" onClick={toggleCart}>
@@ -90,8 +86,6 @@ const Cart = () => {
           <div className="flex-row space-between">
             <strong>Total: ${calculateTotal()}</strong>
 
-            {/* Authentication if user is logged in, if so render a checkout button
-                if not instruct user to login */}
             {Auth.loggedIn() ? (
               <button onClick={submitCheckout}>Checkout</button>
             ) : (
