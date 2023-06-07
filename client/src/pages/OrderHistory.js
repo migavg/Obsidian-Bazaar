@@ -28,14 +28,25 @@ function OrderHistory() {
                   {new Date(parseInt(order.purchaseDate)).toLocaleDateString()}
                 </h3>
                 <div className="flex-row">
-                  {order.products.map(({ _id, name, price }, index) => (
+                  {/* add story and paywall feilds to args */}
+                  {order.products.map(({ _id, name, price, story, paywall }, index) => (
                     <div key={index} className="card px-1 py-1">
                       <Link to={`/products/${_id}`}>
                         <p>{name}</p>
                       </Link>
-                      <div>
+                      {/* <div>
                         <span>${price}</span>
-                      </div>
+                      </div> */}
+                      {/* paywall is checked if true or false to display as "locked" or displayed normally */}
+                      {paywall ? (
+                        <div>
+                          <p>Locked</p>
+                        </div>
+                        ) : (
+                          <div>
+                            <p>{story}</p>
+                          </div>
+                      )}
                     </div>
                   ))}
                 </div>
