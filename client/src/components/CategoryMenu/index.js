@@ -48,6 +48,7 @@ function CategoryMenu() {
     <div className='navbar-item '>
       {categories.map((item) => (
         <a
+        href='#products'
         className="has-text-white is-size-4 navbar-item "
           key={item._id}
           onClick={() => {
