@@ -23,7 +23,7 @@ function Success() {
 
       setTimeout(() => {
         window.location.assign("/");
-      }, 3000);
+      }, 7000);
     }
 
     saveOrder();
@@ -32,9 +32,25 @@ function Success() {
   return (
     <div>
       <Jumbotron>
-        <h1>Success!</h1>
-        <h2>Thank you for your purchase!</h2>
-        <h2>You will now be redirected to the home page</h2>
+        <h1
+          className="successful"
+          style={{ fontSize: "55px", lineHeight: "1.2" }}
+        >
+          Success!
+        </h1>
+        <h2
+          className="purchase"
+          style={{ fontSize: "35px", lineHeight: "1.5" }}
+        >
+          Thank you for your purchase! You can now view the full story in your
+          Order History!
+        </h2>
+        <h2
+          className="purchase"
+          style={{ fontSize: "35px", lineHeight: "1.5" }}
+        >
+          You will now be redirected to the home page
+        </h2>
       </Jumbotron>
     </div>
   );
