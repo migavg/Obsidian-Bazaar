@@ -73,6 +73,8 @@ const resolvers = {
           price: price.id,
           quantity: 1,
         });
+         products[i].quantity -= 1;
+         await products[i].save();
       }
 
       const session = await stripe.checkout.sessions.create({
