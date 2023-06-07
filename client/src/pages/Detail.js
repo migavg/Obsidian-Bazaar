@@ -13,6 +13,7 @@ import {
 import { QUERY_PRODUCTS } from "../utils/queries";
 import { idbPromise } from "../utils/helpers";
 import spinner from "../assets/spinner.gif";
+import obAnimated from "../assets/obAnimated.gif"
 
 function Detail() {
   const [state, dispatch] = useStoreContext();
@@ -82,37 +83,48 @@ function Detail() {
   };
 
   return (
-    <>
+    <div className="container column has-background-black mt-6">
       {currentProduct && cart ? (
-        <div className="container my-1">
-          <Link to="/">← Back to Products</Link>
+        <div className="pt-6">
+          <Link className="has-text-white" to="/">← Back to Products</Link>
 
-          <h2>{currentProduct.name}</h2>
+
+
+          <h2 className="has-text-white has is-size-1 has-text-centered">{currentProduct.name}</h2>
           {/* if paywall is 'true' and purchased is 'false' display message directing user to purchase instead of story,
               if paywall is 'false' or purchased is 'true' story is displayed */}
           {currentProduct.paywall && !currentProduct.purchased ? (
             <p>{currentProduct.story}</p>
           ) : (
-            <p> You forgot your tin foil hat!! Purchase the product to unlock the Conspiracy! For the Obsidian Eye will show you the truth... 
-                You can find this story in your order history if previously purchased.
+            <p className="has-text-white is-size-4 has-text-centered"> You forgot your tin foil hat!! Purchase the product to unlock the Conspiracy! For the Obsidian Eye will show you the truth...
+              You can find this story in your order history if previously purchased.
             </p>
           )}
 
-          <p>
-            <strong>Price:</strong>${currentProduct.price}{" "}
-            <button onClick={addToCart}>Add to Cart</button>
+          
+          
+          <p className="has-text-white has-text-centered pt-6 is-size-3">
+            <strong className="has-text-white">Price: </strong>${currentProduct.price}{" "}
+            </p>
+            
+            <div className="has-text-centered">  <img src={obAnimated}></img></div>
+
+            <div className="has-text-centered pt-3">
+              <button className="button is-dark mr-2" onClick={addToCart}>Add to Cart</button>
             <button
+            className="button is-danger ml-2"
               disabled={!cart.find((p) => p._id === currentProduct._id)}
               onClick={removeFromCart}
             >
               Remove from Cart
             </button>
-          </p>
+            </div>
+         
         </div>
       ) : null}
       {loading ? <img src={spinner} alt="loading" /> : null}
       <Cart />
-    </>
+    </div>
   );
 }
 
