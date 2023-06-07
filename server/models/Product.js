@@ -25,6 +25,11 @@ const productSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'Category',
     required: true
+  },
+  // paywall property with a boolean to determine if the story property is locked or unlocked for the products, (not purchased or purchased)
+  paywall: {
+    type: Boolean,
+    default: true
   }
 });
 

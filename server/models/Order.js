@@ -10,7 +10,12 @@ const orderSchema = new Schema({
   products: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Product'
+      ref: 'Product',
+      // paywall feild to store paywall status for product in the order
+      paywall: {
+        type: Boolean,
+        default: true
+      }
     }
   ]
 });

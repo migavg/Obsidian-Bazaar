@@ -88,8 +88,15 @@ function Detail() {
           <Link to="/">← Back to Products</Link>
 
           <h2>{currentProduct.name}</h2>
-
-          <p>{currentProduct.story}</p>
+          {/* if paywall is 'true' and purchased is 'false' display message directing user to purchase instead of story,
+              if paywall is 'false' or purchased is 'true' story is displayed */}
+          {currentProduct.paywall && !currentProduct.purchased ? (
+            <p>{currentProduct.story}</p>
+          ) : (
+            <p> You forgot your tin foil hat!! Purchase the product to unlock the Conspiracy! For the Obsidian Eye will show you the truth... 
+                You can find this story in your order history if previously purchased.
+            </p>
+          )}
 
           <p>
             <strong>Price:</strong>${currentProduct.price}{" "}
