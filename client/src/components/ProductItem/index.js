@@ -44,7 +44,8 @@ function ProductItem(item) {
       <div className=" ">
         <Link
           className="has-text-white has-text-centered"
-          to={`/products/${_id}`}>
+          to={`/products/${_id}`}
+        >
           <p className="is-size-4 pb-2">{name}</p>
           <p>{story.substring(0, MAX_PREVIEW_CHARACTERS)}...</p>
         </Link>
@@ -55,7 +56,15 @@ function ProductItem(item) {
           <span className="has-text-danger">${price}</span>
         </div>
         <div className="buttons has-addons is-centered pt-4">
-          <button className="button is-light " onClick={addToCart}>Add to cart</button>
+          {quantity > 0 ? (
+            <button className="button is-light" onClick={addToCart}>
+              Add to cart
+            </button>
+          ) : (
+            <p className="oops" style={{ color: "white" }}>
+              Too Late!
+            </p>
+          )}
         </div>
       </div>
     </div>
