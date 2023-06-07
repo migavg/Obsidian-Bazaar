@@ -58,7 +58,6 @@ const resolvers = {
       const line_items = [];
 
       const { products } = await order.populate("products");
-      console.log(products);
       for (let i = 0; i < products.length; i++) {
         const product = await stripe.products.create({
           name: products[i].name,
@@ -67,7 +66,6 @@ const resolvers = {
         const unitPrice = products[i].price * 100;
         const price = await stripe.prices.create({
           product: product.id,
-          // unit_amount: products[i].price * 100,.
           unit_amount: unitPrice,
           currency: "usd",
         });

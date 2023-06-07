@@ -1,20 +1,17 @@
-
-import React, { useEffect } from 'react';
-import { loadStripe } from '@stripe/stripe-js';
-import { useLazyQuery } from '@apollo/client';
-import { QUERY_CHECKOUT } from '../../utils/queries';
-import { idbPromise } from '../../utils/helpers';
-import CartItem from '../CartItem';
-import Auth from '../../utils/auth';
-import { useStoreContext } from '../../utils/GlobalState';
-import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';
-import './style.css';
-import cart from "../../assets/cart.png"
+import React, { useEffect } from "react";
+import { loadStripe } from "@stripe/stripe-js";
+import { useLazyQuery } from "@apollo/client";
+import { QUERY_CHECKOUT } from "../../utils/queries";
+import { idbPromise } from "../../utils/helpers";
+import CartItem from "../CartItem";
+import Auth from "../../utils/auth";
+import { useStoreContext } from "../../utils/GlobalState";
+import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from "../../utils/actions";
+import "./style.css";
+import cart from "../../assets/cart.png";
 
 // stripePromise returns a promise with the stripe object as soon as the Stripe package loads
-const stripePromise = loadStripe(
-  "pk_test_51NFpTqAutvwJrJCImlLs57tLWM0aTgP9r11mSugeahaNpfrjjR9EiYPz6CZmqAbsMqUhVM3jgHVXhd6EtdNMGXPa00I6OQfpzr"
-);
+const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
 
 const Cart = () => {
   const [state, dispatch] = useStoreContext();
@@ -86,7 +83,10 @@ const Cart = () => {
           ))}
 
           <div className="flex-row space-between">
-            <strong className='has-text-white pr-1'> Total: ${calculateTotal()}</strong>
+            <strong className="has-text-white pr-1">
+              {" "}
+              Total: ${calculateTotal()}
+            </strong>
 
             {Auth.loggedIn() ? (
               <button onClick={submitCheckout}>Checkout</button>
@@ -97,9 +97,7 @@ const Cart = () => {
         </div>
       ) : (
         <h3>
-          <span role="img" aria-label="shocked">
-            
-          </span>
+          <span role="img" aria-label="shocked"></span>
           You haven't added anything to your cart yet!
           <br></br>
           Do you really want to leave empty handed?
