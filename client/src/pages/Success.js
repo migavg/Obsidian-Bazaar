@@ -30,7 +30,7 @@ function Success() {
   }, [addOrder]);
 
   return (
-    <div>
+    <div className="column">
       <Jumbotron>
         <h1
           className="successful"

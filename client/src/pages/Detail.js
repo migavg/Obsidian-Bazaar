@@ -83,9 +83,10 @@ function Detail() {
   };
 
   return (
-    <div className="container column has-background-black mt-6">
+
+    <div className="container has-background-black mt-6">
       {currentProduct && cart ? (
-        <div className="pt-6">
+        <div className="p-6">
           <Link className="has-text-white" to="/">← Back to Products</Link>
 
 
@@ -96,35 +97,37 @@ function Detail() {
           {currentProduct.paywall && !currentProduct.purchased ? (
             <p>{currentProduct.story}</p>
           ) : (
-            <p className="has-text-white is-size-4 has-text-centered"> You forgot your tin foil hat!! Purchase the product to unlock the Conspiracy! For the Obsidian Eye will show you the truth...
+            <p className="has-text-white is-size-4 has-text-centered"> You forgot your tin foil hat!! 
+              Purchase the product to unlock the Conspiracy! For the Obsidian Eye will show you the truth...
               You can find this story in your order history if previously purchased.
             </p>
           )}
 
-          
-          
+
+
           <p className="has-text-white has-text-centered pt-6 is-size-3">
             <strong className="has-text-white">Price: </strong>${currentProduct.price}{" "}
-            </p>
-            
-            <div className="has-text-centered">  <img src={obAnimated}></img></div>
+          </p>
 
-            <div className="has-text-centered pt-3">
-              <button className="button is-dark mr-2" onClick={addToCart}>Add to Cart</button>
+          <div className="is-flex is-justify-content-center">  <img className="" src={obAnimated}></img></div>
+
+          <div className="has-text-centered pt-3">
+            <button className="button is-dark m-2" onClick={addToCart}>Add to Cart</button>
             <button
-            className="button is-danger ml-2"
+              className="button is-danger m-2"
               disabled={!cart.find((p) => p._id === currentProduct._id)}
               onClick={removeFromCart}
             >
               Remove from Cart
             </button>
-            </div>
-         
+          </div>
+
         </div>
       ) : null}
       {loading ? <img src={spinner} alt="loading" /> : null}
       <Cart />
     </div>
+
   );
 }
 
