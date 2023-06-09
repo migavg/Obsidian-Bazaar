@@ -9,7 +9,7 @@ export function pluralize(name, count) {
 export function idbPromise(storeName, method, object) {
   return new Promise((resolve, reject) => {
     // Open the IndexedDB database
-    const request = window.indexedDB.open("shop-shop", 1);
+    const request = window.indexedDB.open("obsidian-bazaar", 1);
     let db, tx, store;
 
     // Create object stores if the database is being upgraded
