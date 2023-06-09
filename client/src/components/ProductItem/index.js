@@ -43,7 +43,7 @@ function ProductItem(item) {
     <div className="card ">
       <div className=" ">
         <Link
-          className="has-text-white has-text-centered"
+          className="has-text-white has-text-centered comforta"
           to={`/products/${_id}`}
         >
           <p className="is-size-4 pb-2">{name}</p>

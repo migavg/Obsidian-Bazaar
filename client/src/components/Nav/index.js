@@ -70,7 +70,7 @@ return (
 
       <div id="navbarBasicExample" className="navbar-menu">
         <div className="navbar-start">
-          <a className="navbar-item has-text-white is-size-4" href="/">
+          <a className="navbar-item has-text-white is-size-4 comforta" href="/">
             <span className="pr-3 is-flex">
               <img src={obLogoSmall} alt="small circular stone" />
             </span>
