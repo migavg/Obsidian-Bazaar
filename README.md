@@ -62,5 +62,7 @@ MIT
 Feel free to reach out to us below with any constructive criticism:
 
 - Cole Kasabian: ce.kasabian@gmail.com
-- Cory Styer: [enter contact information]
+- Cory Styer:
+    * Git Hub: [MacaroniKetchup](https://github.com/MacaroniKetchup)
+    * Email: stylesthestyer@gmail.com
 - Miguel Villagomez: [enter contact information]
