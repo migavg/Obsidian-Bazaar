@@ -194,6 +194,21 @@ fieldset[disabled] .pagination-ellipsis {
   margin-bottom: 10%;
 }
 
+.jankHamburger {
+  display: none;
+  
+}
+@media (max-width:1024px){
+  .jankHamburger {
+    display: grid;
+    text-align: center;
+    /* transform: translateY(-100%); */
+    background-color: #151924;
+    
+   
+  }
+}
+
 
 
 .delete,
@@ -6851,6 +6866,10 @@ body.has-navbar-fixed-bottom {
 a.navbar-item,
 .navbar-link {
   cursor: pointer;
+}
+
+.navbar-item:hover {
+  background-color: #292929;
 }
 
 a.navbar-item:focus,
