@@ -65,4 +65,6 @@ Feel free to reach out to us below with any constructive criticism:
 - Cory Styer:
     * Git Hub: [MacaroniKetchup](https://github.com/MacaroniKetchup)
     * Email: stylesthestyer@gmail.com
-- Miguel Villagomez: [enter contact information]
+- Miguel Villagomez: 
+    * GitHub: [migavg](https://github.com/migavg) 
+    * Email: miguelavg93@gmail.com
