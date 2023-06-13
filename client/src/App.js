@@ -50,7 +50,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
-              <Route path="/success?session_id=:CHECKOUT_SESSION_ID" element={<Success />} />
+              <Route path="/success" element={<Success />} />
               <Route path="/orderHistory" element={<OrderHistory />} />
               <Route path="/products/:id" element={<Detail />} />
               <Route path="*" element={<NoMatch />} />
