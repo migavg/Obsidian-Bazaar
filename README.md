@@ -15,6 +15,7 @@ Discover the truth that lies beneath the surface. Embark on a journey through th
 - [Usage](#usage)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
+- [Demo](#demo)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
@@ -46,6 +47,9 @@ You can preview each story to gain knowledge of whether it will interest you or 
 - Express.js
 - Node.js
 - Bulma 
+
+## Demo
+![Obsidian Bazaar Demo](./client/src/assets/obsidian_bazaar_demo.gif)
 
 ## Contributing
 
